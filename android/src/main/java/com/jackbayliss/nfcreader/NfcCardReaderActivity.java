@@ -94,8 +94,8 @@ public void cardIsReadyToRead() {
     String card = mCardNfcAsyncTask.getCardNumber();
     String expiryDate = mCardNfcAsyncTask.getCardExpireDate();
     String cardType = mCardNfcAsyncTask.getCardType();
-    String firstName = mCardNfcAsyncTask.getCardType();
-    String lastName = mCardNfcAsyncTask.getCardType();
+    String firstName = mCardNfcAsyncTask.getHolderFirstname();
+    String lastName = mCardNfcAsyncTask.getHolderLastname();
     Intent intent = new Intent();
     intent.putExtra("cardNumber", card);
     intent.putExtra("expiryDate", expiryDate);

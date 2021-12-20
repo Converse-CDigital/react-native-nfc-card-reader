@@ -149,7 +149,7 @@ afterEvaluate { project ->
     }
 }
     dependencies {
-	        implementation ('com.github.Converse-CDigital:Credit-Card-NFC-Reader:1.1'){
+	        implementation ('com.github.Converse-CDigital:Credit-Card-NFC-Reader:1.0'){
                     exclude module: 'bolts-android'
 
             }
