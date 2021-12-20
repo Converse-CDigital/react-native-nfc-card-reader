@@ -42,7 +42,7 @@ public class NfcCardReaderModule extends ReactContextBaseJavaModule implements A
     if (activity != null) {
         activity.startActivityForResult(scanIntent, INTENT);
     }
-    
+
 	}
 
     public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent intent) {
@@ -51,17 +51,21 @@ public class NfcCardReaderModule extends ReactContextBaseJavaModule implements A
                         WritableMap NfcCardDetails = Arguments.createMap();
                         String cardNumber = intent.getExtras().getString("cardNumber");
                         String expiryDate = intent.getExtras().getString("expiryDate");
-                        String cardType = intent.getExtras().getString("cardType");  
+                        String cardType = intent.getExtras().getString("cardType");
+                        String firstName = intent.getExtras().getString("firstName");
+                        String lastName = intent.getExtras().getString("lastName");
                         NfcCardDetails.putString("cardNumber", cardNumber);
                         NfcCardDetails.putString("expiryDate", expiryDate);
                         NfcCardDetails.putString("cardType", cardType);
+                        NfcCardDetails.putString("firstName", firstName);
+                        NfcCardDetails.putString("lastName", lastName);
                         mNfcCallback.invoke(NfcCardDetails);
                     }
        }
-      
+
     }
 
   public void onNewIntent(Intent intent) {
-   
+
     }
   }

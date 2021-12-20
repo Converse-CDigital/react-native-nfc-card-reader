@@ -25,7 +25,7 @@ public class NfcCardReaderActivity extends ReactActivity implements CardNfcAsync
     private boolean mIntentFromCreate;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) { 
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
         setContentView(R.layout.nfcview);
@@ -44,8 +44,8 @@ public class NfcCardReaderActivity extends ReactActivity implements CardNfcAsync
         super.onResume();
         mIntentFromCreate = false;
         if (mNfcAdapter != null && !mNfcAdapter.isEnabled()){
-        
-          
+
+
         } else if (mNfcAdapter != null){
             mCardNfcUtils.enableDispatch();
         }
@@ -63,7 +63,7 @@ public class NfcCardReaderActivity extends ReactActivity implements CardNfcAsync
         setIntent(intent);
         super.onNewIntent(intent);
         if (mNfcAdapter != null && mNfcAdapter.isEnabled()) {
-        
+
             mCardNfcAsyncTask = new CardNfcAsyncTask.Builder(this, intent, mIntentFromCreate)
                     .build();
         }
@@ -94,14 +94,18 @@ public void cardIsReadyToRead() {
     String card = mCardNfcAsyncTask.getCardNumber();
     String expiryDate = mCardNfcAsyncTask.getCardExpireDate();
     String cardType = mCardNfcAsyncTask.getCardType();
+    String firstName = mCardNfcAsyncTask.getCardType();
+    String lastName = mCardNfcAsyncTask.getCardType();
     Intent intent = new Intent();
     intent.putExtra("cardNumber", card);
     intent.putExtra("expiryDate", expiryDate);
-    intent.putExtra("cardType", cardType);  
+    intent.putExtra("cardType", cardType);
+    intent.putExtra("firstName", firstName);
+    intent.putExtra("lastName", lastName);
     setResult(RESULT_OK, intent);
     finish();
-   
-    
+
+
 
 }
 
