@@ -1,7 +1,7 @@
 {
   "name": "react-native-nfc-card-reader",
   "title": "React Native Nfc Card Reader",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "An NFC reader specifically for credit/debit cards.",
   "main": "index.js",
   "files": [
@@ -34,6 +34,6 @@
   },
   "devDependencies": {
     "react": "^16.9.0",
-    "react-native": "^0.61.5"
+    "react-native": "^0.62.3"
   }
 }
