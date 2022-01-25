@@ -14,7 +14,7 @@
     android:src="@drawable/close_24"
     android:layout_alignParentTop="true"
     android:layout_alignParentEnd="true"
-    android:padding="8dp"/>
+    android:padding="20dp"/>
 
   <TextView
     android:layout_alignParentTop="true"
